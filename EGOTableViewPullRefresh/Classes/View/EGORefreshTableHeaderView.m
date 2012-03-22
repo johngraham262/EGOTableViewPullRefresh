@@ -33,7 +33,7 @@
 @implementation EGORefreshTableHeaderView
 
 @synthesize delegate=_delegate;
-
+@synthesize persistentTopInset;
 
 - (id)initWithFrame:(CGRect)frame arrowImageName:(NSString *)arrow textColor:(UIColor *)textColor  {
     if((self = [super initWithFrame:frame])) {
@@ -182,7 +182,10 @@
 
 #define EGOInsetTop(scrollView, topInset) \
 UIEdgeInsets contentInset = scrollView.contentInset; \
-contentInset.top = topInset; \
+UIEdgeInsets scrollIndicatorInset = scrollView.contentInset; \
+contentInset.top = topInset + persistentTopInset; \
+scrollIndicatorInset.top = persistentTopInset; \
+scrollView.scrollIndicatorInsets = scrollIndicatorInset; \
 scrollView.contentInset = contentInset
 
 - (void)egoRefreshScrollViewDidScroll:(UIScrollView *)scrollView {	
