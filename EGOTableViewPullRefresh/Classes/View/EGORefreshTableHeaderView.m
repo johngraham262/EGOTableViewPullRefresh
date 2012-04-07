@@ -27,7 +27,7 @@
 #import "EGORefreshTableHeaderView.h"
 #import "VenmoDefines.h"
 
-#define TEXT_COLOR	 [UIColor colorWithRed:87.0/255.0 green:108.0/255.0 blue:137.0/255.0 alpha:1.0]
+#define TEXT_COLOR	 [UIColor colorWithRed:100/255.0f green:100/255.0f blue:100/255.0f alpha:1.0]
 #define FLIP_ANIMATION_DURATION 0.18f
 
 @implementation EGORefreshTableHeaderView
@@ -56,14 +56,15 @@
 //		[label release];
 		
 		UILabel *label = [[UILabel alloc] initWithFrame:
-                          CGRectMake(0.0f, frame.size.height - 39.0f/*48.0f*/, self.frame.size.width, 20.0f)];
+                          CGRectMake(70.0f, frame.size.height - 33.0f/*48.0f*/, self.frame.size.width, 20.0f)];
+        
 		label.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 		label.font = [UIFont boldSystemFontOfSize:13.0f];
 		label.textColor = textColor;
 		label.shadowColor = [UIColor colorWithWhite:0.9f alpha:1.0f];
-		label.shadowOffset = CGSizeMake(0.0f, 1.0f);
+		label.shadowOffset = CGSizeMake(1.0f, 1.0f);
 		label.backgroundColor = grayVenmoColor; //[UIColor clearColor];
-		label.textAlignment = UITextAlignmentCenter;
+		//label.textAlignment = UITextAlignmentCenter;
 		[self addSubview:label];
 		_statusLabel=label;
 		[label release];
@@ -83,7 +84,7 @@
 		_arrowImage=layer;
 		
 		UIActivityIndicatorView *view = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-		view.frame = CGRectMake(25.0f, frame.size.height - 38.0f, 20.0f, 20.0f);
+		view.frame = CGRectMake(25.0f, frame.size.height - 33.0f, 20.0f, 20.0f);
 		[self addSubview:view];
 		_activityView = view;
 		[view release];
@@ -98,7 +99,7 @@
 }
 
 - (id)initWithFrame:(CGRect)frame  {
-  return [self initWithFrame:frame arrowImageName:@"blueArrow.png" textColor:TEXT_COLOR];
+  return [self initWithFrame:frame arrowImageName:@"grayArrow.png" textColor:TEXT_COLOR];
 }
 
 #pragma mark -
