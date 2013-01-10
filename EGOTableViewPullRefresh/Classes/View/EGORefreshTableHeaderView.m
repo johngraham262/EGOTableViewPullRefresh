@@ -74,11 +74,9 @@
 		layer.contentsGravity = kCAGravityResizeAspect;
 		layer.contents = (id)[UIImage imageNamed:arrow].CGImage;
 		
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 40000
 		if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)]) {
 			layer.contentsScale = [[UIScreen mainScreen] scale];
 		}
-#endif
 		
 		[[self layer] addSublayer:layer];
 		_arrowImage=layer;
