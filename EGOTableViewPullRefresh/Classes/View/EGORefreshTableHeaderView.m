@@ -242,6 +242,7 @@ scrollView.contentInset = contentInset
 	
 	[UIView beginAnimations:nil context:NULL];
 	[UIView setAnimationDuration:.3];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
 	EGOInsetTop(scrollView, 0.0f);
 	[UIView commitAnimations];
 	
