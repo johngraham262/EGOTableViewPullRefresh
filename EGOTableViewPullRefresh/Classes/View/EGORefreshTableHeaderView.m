@@ -42,7 +42,7 @@
         UIColor *grayVenmoColor = VENMO_GRAY_TEXTURE;
 		self.backgroundColor = grayVenmoColor;//[UIColor colorWithRed:226.0/255.0 green:231.0/255.0 blue:237.0/255.0 alpha:1.0];
 
-        
+        // Comment
 //		UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, frame.size.height - 30.0f, self.frame.size.width, 20.0f)];
 //		label.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 //		label.font = [UIFont systemFontOfSize:12.0f];
